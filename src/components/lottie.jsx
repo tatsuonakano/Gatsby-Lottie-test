@@ -1,6 +1,7 @@
 import React, { createRef, useEffect } from "react";
 import lottie from 'lottie-web';
-import animationData from '../lottie-json/44037-gatsby.json/';
+import animationData from '../lottie-json/44037-gatsby.json';
+
 const Lottie = () => {
   
   let animationContainer = createRef();
@@ -13,7 +14,7 @@ const Lottie = () => {
       autoplay: false,
       animationData: animationData
     });
-    return () => anim.destroy(); // optional clean up for unmounting
+    return () => anim.destroy(); 
   }, []);
   function handleStop() {
     anim.pause();
@@ -22,17 +23,9 @@ const Lottie = () => {
     anim.play();
   }
   return (
-    <Layout>
-      <SEO pathname={location.pathname} title={"About me"}/>
-      <Section narrow >
-        <HeadingContainer>
           <div onMouseEnter={handleStart} onMouseLeave={handleStop}>
-            Hover me
-            <HeroHeading ref={animationContainer}></HeroHeading>
+            <div ref={animationContainer}></div>
           </div>
-        </HeadingContainer>
-      </Section>
-    </Layout>
   );
 };
 export default Lottie;

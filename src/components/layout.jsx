@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <body className={bodystyle}>
+      <body>
                 {children}
       </body>
     </>
