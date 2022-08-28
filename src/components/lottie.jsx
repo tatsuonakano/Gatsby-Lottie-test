@@ -1,6 +1,6 @@
 import React, { createRef, useEffect } from "react";
 import lottie from 'lottie-web';
-import animationData from '../lottie-json/pinjump.json';
+import animationData from '../lottie-json/44037-gatsby.json/';
 const Lottie = () => {
   
   let animationContainer = createRef();
@@ -21,11 +21,18 @@ const Lottie = () => {
   function handleStart() {
     anim.play();
   }
-  
   return (
+    <Layout>
+      <SEO pathname={location.pathname} title={"About me"}/>
+      <Section narrow >
+        <HeadingContainer>
           <div onMouseEnter={handleStart} onMouseLeave={handleStop}>
-            <div ref={animationContainer}></div>
+            Hover me
+            <HeroHeading ref={animationContainer}></HeroHeading>
           </div>
+        </HeadingContainer>
+      </Section>
+    </Layout>
   );
 };
 export default Lottie;
